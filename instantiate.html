@@ -6,7 +6,19 @@
 
   var PUBNUB_demo = PUBNUB.init({
     publish_key: 'pub-c-f68df8c7-58f9-4048-a493-f918c25cae00',
-    subscribe_key: 'sub-c-74ae7396-b13e-11e6-8319-02ee2ddab7fe'
+    subscribe_key: 'sub-c-74ae7396-b13e-11e6-8319-02ee2ddab7fe',
+    secret_key: 'sec-c-YjM5N2I1ZDktMWRhMC00NDc0LWJjMDEtYjU5NjkwZTkyYzI0'
   });
+
+
+  pubnub.grant({
+    channel: 'my_channel',
+    auth_key: 'my_rw_authkey',
+    read: true,
+    write: true,
+    ttl: 5,
+    callback: function(m){console.log(m)}
+});
+
 
 </script>
